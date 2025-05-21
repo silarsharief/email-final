@@ -30,15 +30,12 @@ This email bot system automatically generates and sends daily market digest emai
    ```bash
    pip install -r requirements.txt
    ```
-3. Configure email settings in `send_sample_email.py`:
-   - Update sender email and password
-   - Update recipient email list
+
 
 ## Files Description
 
 - `test.html`: Email template with placeholders for dynamic content
 - `render_email.py`: Generates the email content with market data
-- `send_sample_email.py`: Sends the generated email
 - `scheduled_email_sender.py`: Script for scheduled email sending
 - `run_email_sender.bat`: Windows batch file to run the email sender
 - `Truwealth logo--full--white.png`: Logo used in the email
@@ -63,13 +60,7 @@ This email bot system automatically generates and sends daily market digest emai
      - Gainers and losers
      - Market news
    - Creates a complete HTML email
-
-3. **Email Sending** (`send_sample_email.py`):
-   - Configures email settings
-   - Attaches required images (logo, charts)
-   - Sends email to recipient list
-   - Handles email delivery status
-
+   - 
 4. **Scheduling** (`scheduled_email_sender.py`):
    - Runs the email generation and sending process
    - Can be scheduled to run daily
@@ -83,12 +74,7 @@ This email bot system automatically generates and sends daily market digest emai
 
 ## Usage
 
-### Manual Email Sending
 
-1. Run the email sender script:
-   ```bash
-   python send_sample_email.py
-   ```
 
 ### Scheduled Email Sending
 
@@ -101,7 +87,7 @@ This email bot system automatically generates and sends daily market digest emai
 
 1. Modify `test.html` to change the email template
 2. Update `render_email.py` to modify the data generation logic
-3. Adjust email settings in `send_sample_email.py`
+
 
 ## Email Content
 
