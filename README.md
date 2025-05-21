@@ -11,6 +11,17 @@ This email bot system automatically generates and sends daily market digest emai
 - Trending market news
 - Interactive buttons for various services
 
+- 
+## Environment Variables
+
+Create a `.env` file in the project root directory with the following variables:
+
+```env
+# Email Configuration
+SENDER_EMAIL=your.email@gmail.com
+SENDER_PASSWORD=your_app_specific_password
+RECIPIENT_EMAILS=email1@example.com,email2@example.com
+
 ## Prerequisites
 
 - Python 3.x
