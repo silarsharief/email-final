@@ -7,9 +7,6 @@ import os
 from dotenv import load_dotenv
 import sys
 import traceback
-import threading
-import tkinter as tk
-from tkinter import ttk
 
 # Add the parent directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -19,28 +16,8 @@ sys.path.append(parent_dir)
 # Import render_email functions
 from render_email import get_market_data, get_index_change, get_nifty_movers, get_news_for_tickers, summarize_news
 
-# Global Tkinter root window
-root = None
-
-def init_tkinter():
-    global root
-    if root is None:
-        root = tk.Tk()
-        root.withdraw()  # Hide the window
-    return root
-
-def cleanup_tkinter():
-    global root
-    if root is not None:
-        root.quit()
-        root.destroy()
-        root = None
-
 def send_email():
     try:
-        # Initialize Tkinter
-        init_tkinter()
-        
         # Load environment variables
         load_dotenv()
 
@@ -111,16 +88,10 @@ def send_email():
     except Exception as e:
         print(f"Error sending email: {str(e)}")
         raise
-    finally:
-        # Cleanup Tkinter
-        cleanup_tkinter()
 
 def generate_and_send():
     try:
         print("Starting email generation process...")
-        
-        # Initialize Tkinter
-        init_tkinter()
         
         # Generate market data and graphs
         print("Generating market data...")
@@ -151,15 +122,12 @@ def generate_and_send():
         print(f"Error in generate_and_send: {str(e)}")
         print(traceback.format_exc())
         return False
-    finally:
-        # Cleanup Tkinter
-        cleanup_tkinter()
 
 if __name__ == '__main__':
     try:
         print(f"Starting email generation at {datetime.now()}")
         generate_and_send()
         print("Process completed")
-    finally:
-        # Ensure Tkinter is cleaned up even if there's an error
-        cleanup_tkinter() 
+    except Exception as e:
+        print(f"Error in main: {str(e)}")
+        print(traceback.format_exc()) 

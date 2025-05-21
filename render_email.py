@@ -46,15 +46,6 @@ def plot_market_data(df, date_str, index_name, output_file):
     # Plot the data with high-contrast color
     line, = ax.plot(df.index, df['Close'], linewidth=2, color=line_color)
     
-    # Customize the graph
-    ax.set_title(index_name, fontsize=16, pad=10, color='grey', weight='bold')
-    
-    # Add date with custom font
-    date_font = font_manager.FontProperties(family='monospace', weight='bold', size=12)
-    ax.text(0.5, 0.95, date_str, transform=ax.transAxes, 
-            horizontalalignment='center', color=line_color,
-            fontproperties=date_font, alpha=0.8)
-    
     # Remove x-axis labels and ticks
     ax.set_xticks([])
     ax.set_xticklabels([])
@@ -70,10 +61,6 @@ def plot_market_data(df, date_str, index_name, output_file):
     # Remove all spines
     for spine in ax.spines.values():
         spine.set_visible(False)
-    
-    # Add text shadow effect
-    for text in ax.texts:
-        text.set_path_effects([withStroke(linewidth=2, foreground='black')])
     
     # Save the plot with transparent background
     plt.savefig(os.path.join(script_dir, output_file), dpi=300, bbox_inches='tight', 
@@ -557,7 +544,6 @@ async def process_all_links(urls=None):
                 "https://unlistedzone.com/shares/msei-share-price-buy-sell-unlisted-shares-of-msei-metropolitan-stock-exchange",
                 "https://unlistedzone.com/shares/hero-fincorp-limited-share-price-buy-sell-unlisted-shares-of-hero-fincorp",
                 "https://unlistedzone.com/shares/csk-share-price-buy-sell-unlisted-shares",
-                "https://unlistedzone.com/shares/buy-sell-share-price-aspire-home-finance-corporation-unlisted-shares",
                 "https://unlistedzone.com/shares/hdfc-securities-limited-share-price-buy-sell-hdfc-securities-unlisted-shares",
                 "https://unlistedzone.com/shares/tata-capital-limited-unlisted-share",
                 "https://unlistedzone.com/shares/indian-potash-limited-unlisted-share-buy-sell-share-price",
@@ -567,9 +553,7 @@ async def process_all_links(urls=None):
                 "https://unlistedzone.com/shares/boat-unlisted-share-price",
                 "https://unlistedzone.com/shares/mohan-meakin-limited-share-price-buy-sell-mohan-meakin-unlisted-shares",
                 "https://unlistedzone.com/shares/apollo-green-energy-limited-unlisted-shares",
-                "https://unlistedzone.com/shares/buy-sell-latest-price-trl-krosaki-refractories-unlisted-shares",
-                "https://unlistedzone.com/shares/parag-parikh-financial-advisory-services-ltd-ppfas",
-                "https://unlistedzone.com/shares/delta-galaxy-unlisted-shares"
+                "https://unlistedzone.com/shares/parag-parikh-financial-advisory-services-ltd-ppfas"
 
             ]
         
