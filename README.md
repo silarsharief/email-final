@@ -11,7 +11,16 @@ This email bot system automatically generates and sends daily market digest emai
 - Trending market news
 - Interactive buttons for various services
 
-- 
+
+## DEMO example
+
+<img width="283" height="724" alt="Screenshot 2025-11-24 at 6 43 57 PM" src="https://github.com/user-attachments/assets/d44a5d8c-1c66-40d0-b5cd-1028caa8808b" />
+
+
+<img width="283" height="678" alt="Screenshot 2025-11-24 at 6 43 01 PM" src="https://github.com/user-attachments/assets/5ae2d4ed-e6ee-4c09-8115-0356c5dc01ec" />
+
+
+
 ## Environment Variables
 
 Create a `.env` file in the project root directory with the following variables:
