@@ -1,4 +1,4 @@
-# Truwealth Market Digest Email Bot
+# Market Digest Email Bot
 
 This email bot system automatically generates and sends daily market digest emails with market updates, stock information, and news.
 
